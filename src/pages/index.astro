@@ -4,7 +4,7 @@ import { Schema } from 'astro-seo-schema';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
-import Grid from '~/components/widgets/Grid.astro';
+import Content from '~/components/widgets/Content.astro';
 import About from '~/components/widgets/About.astro';
 import Contact from '~/components/widgets/Contact.astro';
 
@@ -149,49 +149,48 @@ const metadata = {
       </Fragment>
     </About>
 
-    <Grid
+    <Content
       id="servicos"
       title="Nossos Serviços"
-      subtitle="Soluções profissionais para sua TV">
-      <div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
-        <h3 class="text-xl font-bold">Conserto de TV</h3>
-        <ul class="space-y-2">
-          <li>✓ Reparo de tela</li>
-          <li>✓ Problemas de imagem</li>
-          <li>✓ Falhas de ligação</li>
-          <li>✓ Defeitos de som</li>
-        </ul>
-        <p class="font-semibold mt-4">A partir de R$100,00</p>
-        <a href="https://wa.me/33648780116?text=Olá! Preciso de um orçamento para conserto de TV" 
-           class="btn btn-sm flex items-center justify-center gap-2" 
-           target="_blank" 
-           rel="noopener noreferrer">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          </svg>
-          Solicitar Orçamento
-        </a>
-      </div>
-      <div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
-        <h3 class="text-xl font-bold">Instalação de TV</h3>
-        <ul class="space-y-2">
-          <li>✓ Instalação na parede</li>
-          <li>✓ Configuração inicial</li>
-          <li>✓ Conexão com internet</li>
-          <li>✓ Organização de cabos</li>
-        </ul>
-        <p class="font-semibold mt-4">A partir de R$50,00</p>
-        <a href="https://wa.me/33648780116?text=Olá! Gostaria de agendar uma instalação de TV" 
-           class="btn btn-sm flex items-center justify-center gap-2" 
-           target="_blank" 
-           rel="noopener noreferrer">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          </svg>
-          Agendar Instalação
-        </a>
-      </div>
-    </Grid>
+      subtitle="Soluções profissionais para sua TV"
+      isReversed={true}
+      items={[
+        {
+          title: 'Conserto de TV',
+          description: `
+            ✓ Reparo de tela
+            ✓ Problemas de imagem
+            ✓ Falhas de ligação
+            ✓ Defeitos de som
+            
+            A partir de R$100,00
+          `,
+          callToAction: {
+            target: '_blank',
+            text: 'Solicitar Orçamento',
+            href: 'https://wa.me/33648780116?text=Olá! Preciso de um orçamento para conserto de TV',
+            icon: 'tabler:brand-whatsapp',
+          },
+        },
+        {
+          title: 'Instalação de TV',
+          description: `
+            ✓ Instalação na parede
+            ✓ Configuração inicial
+            ✓ Conexão com internet
+            ✓ Organização de cabos
+            
+            A partir de R$50,00
+          `,
+          callToAction: {
+            target: '_blank',
+            text: 'Agendar Instalação',
+            href: 'https://wa.me/33648780116?text=Olá! Gostaria de agendar uma instalação de TV',
+            icon: 'tabler:brand-whatsapp',
+          },
+        },
+      ]}
+    />
 
     <Contact
       id="contato"
