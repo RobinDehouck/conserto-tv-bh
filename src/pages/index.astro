@@ -5,7 +5,7 @@ import { Schema } from 'astro-seo-schema';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
-import About from '~/components/widgets/About.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Contact from '~/components/widgets/Contact.astro';
 
 const metadata = {
@@ -117,37 +117,37 @@ const metadata = {
       ]}
     />
 
-    <About id="sobre">
-      <Fragment slot="title">
-        Sobre a TechBH
-      </Fragment>
-      <Fragment slot="subtitle">
-        Referência em assistência técnica de TV em Belo Horizonte há mais de uma década
-      </Fragment>
+    <Features2
+      id="sobre"
+      title="Sobre a TechBH"
+      subtitle="Referência em assistência técnica de TV em Belo Horizonte há mais de uma década"
+      highlight="Nossa Expertise"
+      items={[
+        {
+          title: '+5000 TVs',
+          description: 'Mais de 5000 TVs consertadas com sucesso em Belo Horizonte e região',
+          icon: 'tabler:device-tv',
+        },
+        {
+          title: '98% Satisfação',
+          description: 'Alto índice de satisfação dos nossos clientes com nossos serviços',
+          icon: 'tabler:thumb-up',
+        },
+        {
+          title: '10+ Anos',
+          description: 'Mais de uma década de experiência no mercado de assistência técnica',
+          icon: 'tabler:certificate',
+        },
+      ]}
+    >
       <Fragment slot="content">
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold tracking-tight mb-4">Nossa Expertise</h2>
-          <p class="text-gray-600">
-            Especialistas em reparo de Smart TVs, TVs LED, LCD, OLED e QLED de todas as marcas: Samsung, LG, Sony, 
-            Philips, TCL, AOC e outras. Atendemos toda região de Belo Horizonte com serviço especializado e garantido.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="flex flex-col gap-2">
-            <span class="font-bold text-xl">+5000</span>
-            <span>TVs Consertadas</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="font-bold text-xl">98%</span>
-            <span>Clientes Satisfeitos</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="font-bold text-xl">10+</span>
-            <span>Anos de Experiência</span>
-          </div>
-        </div>
+        <h3 class="text-2xl font-bold tracking-tight mb-4">Atendemos Todas as Marcas</h3>
+        <p class="text-gray-600">
+          Especialistas em reparo de Smart TVs, TVs LED, LCD, OLED e QLED de todas as marcas: Samsung, LG, Sony, 
+          Philips, TCL, AOC e outras. Atendemos toda região de Belo Horizonte com serviço especializado e garantido.
+        </p>
       </Fragment>
-    </About>
+    </Features2>
 
     <Content
       id="servicos"
