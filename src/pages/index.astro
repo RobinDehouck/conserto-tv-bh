@@ -1,0 +1,104 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout title="Assistência Técnica de TV em Belo Horizonte - TechBH" description="Procurando assistência técnica de TV em Belo Horizonte? Consertos rápidos e garantidos você encontra na TechBH! Fale conosco agora.">
+
+        <Hero>
+          <div class="flex flex-col gap-4 md:gap-8">
+            <h1 class="text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+              Assistência Técnica de TV em Belo Horizonte
+            </h1>
+            <div class="text-xl text-gray-600 mb-8">
+              Seu problema resolvido rápido e com garantia!
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button class="btn btn-primary">Fale Conosco Agora</button>
+              <button class="btn">Conheça Nossos Serviços</button>
+            </div>
+          </div>
+        </Hero>
+
+        <Features
+          title="Nossos Diferenciais"
+          subtitle="Por que escolher nossos serviços"
+          items={[
+            {
+              title: "Rapidez",
+              description: "Resolvemos seu problema com agilidade sem deixar de lado o cuidado e qualidade.",
+              icon: "clock-fast"
+            },
+            {
+              title: "Garantia",
+              description: "Nossos reparos possuem garantia, garantindo sua total satisfação.",
+              icon: "shield-check"
+            },
+            {
+              title: "Experiência Local",
+              description: "Trabalhamos com técnicos locais de Belo Horizonte, entendendo a realidade e necessidade dos nossos clientes.",
+              icon: "location-marker"
+            },
+          ]}
+        />
+
+        <About>
+          <Fragment slot="title">
+            Sobre a TechBH
+          </Fragment>
+          <Fragment slot="subtitle">
+            Somos uma empresa dedicada a oferecer soluções de reparo de TV em Belo Horizonte. Contamos com uma equipe experiente e capacitada, pronta para atender a todas as suas necessidades.
+          </Fragment>
+          <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight mb-2">Nossa Missão</h3>
+            <p class="mb-8">Nossa missão é oferecer um serviço de alta qualidade, rápido e com preço justo aos moradores de Belo Horizonte.</p>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+              <div class="flex flex-col gap-2"><span class="font-bold">Transparência</span></div> <div class="flex flex-col gap-2"><span class="font-bold">Dedicação</span></div> <div class="flex flex-col gap-2"><span class="font-bold">Comprometimento</span></div>
+            </div>
+          </Fragment>
+        </About>
+
+        <Grid>
+          <div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-xl font-bold">Reparo de TV</h3>
+            <p>Realizamos o conserto da sua TV com agilidade e com peças de alta qualidade.</p>
+            <p class="font-semibold">A partir de R$100,00</p>
+          </div>
+          <div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-xl font-bold">Instalação de TV</h3>
+            <p>Precisa instalar sua TV nova? Fazemos isso pra você!</p>
+            <p class="font-semibold">A partir de R$50,00</p>
+          </div>
+        </Grid>
+
+        <Contact
+          title="Entre em Contato"
+          subtitle="Estamos prontos para atender você"
+          inputs={{
+            name: "Nome",
+            email: "Email",
+            message: "Mensagem"
+          }}
+          description={{
+            whatsapp: "(31) 98765-4321",
+            email: "contato@techbh.com.br",
+            address: "Rua dos Guajajaras, 123, Centro - Belo Horizonte",
+            hours: "Segunda à Sexta: 09h - 19h, Sábado: 09h - 13h"
+          }}
+        />
+</Layout>
